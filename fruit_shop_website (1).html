@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awan Fruits | Online Fruit Shop</title>
+<style>
+:root{--green:#176b45;--lime:#dff2a3;--cream:#fffaf0;--ink:#183329;--muted:#66756c;--orange:#ff9f43}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream)}
+header{background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 2px 14px #173b2510}
+.nav{max-width:1120px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:900;font-size:1.35rem;color:var(--green)}.brand span{color:var(--orange)}
+nav a{color:var(--ink);text-decoration:none;margin-left:18px;font-weight:700;font-size:.95rem}
+.hero{max-width:1120px;margin:28px auto;padding:35px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.hero-copy{padding:20px 0}.eyebrow{color:var(--green);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.02;margin:14px 0;color:#153d2b}h1 em{font-style:normal;color:#e68a2e}
+.hero p{font-size:1.1rem;line-height:1.7;color:var(--muted);max-width:550px}
+.btn{border:0;border-radius:999px;padding:13px 20px;background:var(--green);color:#fff;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.btn.secondary{background:#fff;color:var(--green);border:1px solid #cbd9ce}.hero-art{min-height:300px;border-radius:32px;background:radial-gradient(circle at 30% 25%,#fff9d7 0 10%,transparent 11%),linear-gradient(145deg,#dff2a3,#8ccf8b);display:flex;align-items:center;justify-content:center;font-size:clamp(7rem,18vw,12rem);box-shadow:0 18px 45px #315c2a18}
+.section{max-width:1120px;margin:0 auto;padding:28px 22px 50px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}.section h2{font-size:2rem;margin:0 0 8px}.section-head p{margin:0;color:var(--muted)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.controls input,.controls select{padding:12px 14px;border:1px solid #d6e0d7;border-radius:12px;background:#fff;font:inherit}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:#fff;border:1px solid #edf0e9;border-radius:20px;padding:14px;box-shadow:0 8px 24px #173b2508;display:flex;flex-direction:column}
+.product-art{height:145px;border-radius:15px;background:#f3f8e8;display:flex;align-items:center;justify-content:center;font-size:5rem}.product h3{margin:14px 0 5px}.product .meta{color:var(--muted);font-size:.9rem}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:14px}.price{font-weight:900;color:var(--green)}.add{border:0;border-radius:12px;background:var(--lime);color:var(--green);font-weight:900;padding:10px 13px;cursor:pointer}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info{background:#fff;border-radius:18px;padding:22px;border:1px solid #edf0e9}.info .emoji{font-size:2rem}.info h3{margin:12px 0 6px}.info p{color:var(--muted);line-height:1.6;margin:0}
+.cart-panel{background:#fff;border:1px solid #e5ebdf;border-radius:22px;padding:22px;margin-top:26px}.cart-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #edf0e9}.cart-row button{border:0;background:none;color:#b34b32;cursor:pointer;font-weight:700}.cart-total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:900;padding:18px 0}
+.checkout{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.checkout input,.checkout select,.checkout textarea{width:100%;padding:12px;border:1px solid #d6e0d7;border-radius:12px;font:inherit;background:#fff}.checkout textarea{grid-column:1/-1;min-height:75px}.checkout .btn{grid-column:1/-1}
+footer{background:#153d2b;color:#eaf4e7;padding:28px 22px;text-align:center}footer p{margin:8px 0;color:#c7d9c8}
+.notice{font-size:.88rem;color:var(--muted);margin-top:10px}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.hero-art{min-height:220px}.info-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:520px){.nav{flex-wrap:wrap}.nav nav a{margin-left:10px}.products{gap:10px}.product{padding:10px}.product-art{height:110px;font-size:3.8rem}.product-bottom{align-items:start;flex-direction:column}.checkout{grid-template-columns:1fr}.checkout textarea{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">Awan<span>Fruits</span> 🍃</div><nav><a href="#shop">Shop</a><a href="#services">Services</a><a href="#cart">Cart <span id="cart-count">(0)</span></a></nav></div></header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow">Freshness delivered daily</div><h1>Good fruit.<br><em>Good mood.</em></h1><p>Choose your favourite seasonal fruits, add them to your basket, and order fresh produce directly from our shop.</p><a class="btn" href="#shop">Shop fresh fruits →</a></div>
+ <div class="hero-art" aria-label="Fresh fruit illustration">🍊🍎🍇</div>
+</section>
+<section class="section" id="shop">
+ <div class="section-head"><div><h2>Our fresh picks</h2><p>Freshly selected. Prices shown per kilogram unless noted.</p></div></div>
+ <div class="controls"><input id="search" type="search" placeholder="Search fruits…"><select id="category"><option value="all">All fruits</option><option value="Citrus">Citrus</option><option value="Tropical">Tropical</option><option value="Local">Local favourites</option><option value="Berries">Berries</option></select></div>
+ <div class="products" id="products"></div>
+</section>
+<section class="section" id="services"><div class="section-head"><div><h2>Shopping made easy</h2><p>Simple, convenient, and fresh from our market.</p></div></div>
+ <div class="info-grid"><div class="info"><div class="emoji">🚚</div><h3>Home delivery</h3><p>Home delivery in Lahore. Delivery charge: Rs 300 per order.</p></div><div class="info"><div class="emoji">🍃</div><h3>Fresh selection</h3><p>We choose fresh fruits and update availability based on the market.</p></div><div class="info"><div class="emoji">💬</div><h3>Order on WhatsApp</h3><p>Send your basket directly to our shop and confirm your order with us.</p></div></div>
+</section>
+<section class="section" id="cart"><div class="section-head"><div><h2>Your basket</h2><p>Review your items and send your order to WhatsApp.</p></div></div>
+ <div class="cart-panel"><div id="cart-items"><p class="notice">Your basket is empty. Add some fresh fruit above.</p></div><div class="cart-total"><span>Total</span><span id="total">Rs 0</span></div>
+ <div class="checkout"><input id="customer-name" placeholder="Your name" autocomplete="name"><input id="customer-phone" placeholder="Your phone number" autocomplete="tel"><input id="customer-address" placeholder="Delivery address"><select id="fulfillment"><option value="Home delivery">Home delivery</option><option value="Shop pickup">Shop pickup</option></select><textarea id="notes" placeholder="Any notes? (e.g. ripe bananas, call before delivery)"></textarea><button class="btn" onclick="sendOrder()">Order via WhatsApp</button></div><p class="notice">Delivery is available in Lahore for Rs 300. Fruit prices are sample prices; update them to match your daily market rates.</p></div>
+</section>
+</main>
+<footer><strong>Awan Fruits</strong><p>Fresh fruit for every day.</p><p>© <span id="year"></span> FreshBasket</p></footer>
+<script>
+// EDIT THESE DETAILS before publishing:
+const SHOP_NAME = "Awan Fruits";
+const WHATSAPP_NUMBER = "923244084210"; // Pakistan format: 92 + number, no + or spaces
+const CURRENCY = "Rs";
+const DELIVERY_CHARGE = 300;
+const DELIVERY_AREA = "Lahore";
+const fruits = [
+ {id:1,name:"Bananas",category:"Tropical",price:180,unit:"kg",emoji:"🍌"},
+ {id:2,name:"Apples",category:"Local",price:320,unit:"kg",emoji:"🍎"},
+ {id:3,name:"Oranges",category:"Citrus",price:220,unit:"kg",emoji:"🍊"},
+ {id:4,name:"Mangoes",category:"Tropical",price:350,unit:"kg",emoji:"🥭"},
+ {id:5,name:"Grapes",category:"Berries",price:450,unit:"kg",emoji:"🍇"},
+ {id:6,name:"Pomegranates",category:"Local",price:380,unit:"kg",emoji:"🍎"},
+ {id:7,name:"Lemons",category:"Citrus",price:200,unit:"kg",emoji:"🍋"},
+ {id:8,name:"Watermelon",category:"Local",price:100,unit:"kg",emoji:"🍉"}
+];
+let cart = {};
+const money = n => `${CURRENCY} ${Math.round(n).toLocaleString("en-PK")}`;
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const cat=document.getElementById("category").value;
+ const list=fruits.filter(f=>f.name.toLowerCase().includes(q)&&(cat==="all"||f.category===cat));
+ document.getElementById("products").innerHTML=list.map(f=>`<article class="product"><div class="product-art">${f.emoji}</div><h3>${f.name}</h3><div class="meta">${f.category} · per ${f.unit}</div><div class="product-bottom"><span class="price">${money(f.price)}</span><button class="add" onclick="addToCart(${f.id})">+ Add</button></div></article>`).join("")||"<p>No fruits found.</p>";
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();}
+function removeFromCart(id){delete cart[id];renderCart();}
+function renderCart(){
+ const entries=Object.entries(cart);
+ document.getElementById("cart-count").textContent=`(${entries.reduce((s,[,q])=>s+q,0)})`;
+ if(!entries.length){document.getElementById("cart-items").innerHTML='<p class="notice">Your basket is empty. Add some fresh fruit above.</p>';document.getElementById("total").textContent=money(0);return;}
+ let total=0;
+ document.getElementById("cart-items").innerHTML=entries.map(([id,qty])=>{const f=fruits.find(x=>x.id===+id);const subtotal=f.price*qty;total+=subtotal;return `<div class="cart-row"><span>${f.emoji} ${f.name} × ${qty} <small>(${money(subtotal)})</small></span><button onclick="removeFromCart(${id})">Remove</button></div>`}).join("");
+ document.getElementById("total").textContent=money(total);
+}
+function sendOrder(){
+ const entries=Object.entries(cart);if(!entries.length){alert("Please add fruit to your basket first.");return;}
+ const name=document.getElementById("customer-name").value.trim();
+ const phone=document.getElementById("customer-phone").value.trim();
+ const address=document.getElementById("customer-address").value.trim();
+ if(!name||!phone){alert("Please enter your name and phone number.");return;}
+ const fulfillment=document.getElementById("fulfillment").value;
+ let total=0;const lines=entries.map(([id,qty])=>{const f=fruits.find(x=>x.id===+id);total+=f.price*qty;return `• ${f.name}: ${qty} ${f.unit} × ${money(f.price)} = ${money(f.price*qty)}`;});
+ const deliveryCharge = fulfillment === "Home delivery" ? DELIVERY_CHARGE : 0;
+ const grandTotal = total + deliveryCharge;
+ const msg=`New order for ${SHOP_NAME}%0A%0A${lines.join("%0A")}%0A%0ASubtotal: ${money(total)}%0ADelivery: ${money(deliveryCharge)}%0ATotal: ${money(grandTotal)}%0A%0ACustomer: ${name}%0APhone: ${phone}%0AOrder type: ${fulfillment}%0ADelivery area: ${DELIVERY_AREA}%0AAddress: ${address||"Not provided"}%0ANotes: ${document.getElementById("notes").value.trim()||"None"}`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+}
+document.getElementById("search").addEventListener("input",renderProducts);
+document.getElementById("category").addEventListener("change",renderProducts);
+document.getElementById("year").textContent=new Date().getFullYear();
+renderProducts();renderCart();
+</script>
+</body>
+</html>
